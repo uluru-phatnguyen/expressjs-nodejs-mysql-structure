@@ -1,0 +1,11 @@
+// Using Babel: To enable more modern constructions in your migrations and seeders, you can simply install babel-register and require it at the beginning of .sequelizerc:
+
+require('@babel/register');
+const path = require('path');
+
+module.exports = {
+  'config': path.resolve('config', 'db.config.js'),
+  'models-path': path.resolve('db', 'models'),
+  'seeders-path': path.resolve('db', 'seeders'),
+  'migrations-path': path.resolve('db', 'migrations'),
+};

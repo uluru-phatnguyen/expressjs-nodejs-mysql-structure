@@ -1,0 +1,55 @@
+{
+  "name": "kairos",
+  "version": "1.0.0",
+  "description": "Kairos build on ExpressJS and MySQL",
+  "main": "server.js",
+  "scripts": {
+    "start": "nodemon -- server.js",
+    "sync": "node ./db/sync",
+    "seed": "sequelize db:seed:all",
+    "migrate": "sequelize db:migrate",
+    "apidoc": "apidoc -i ./apidoc -o ./apidoc/output --silent"
+  },
+  "keywords": [
+    "expressjs",
+    "mysql",
+    "sequelize",
+    "api"
+  ],
+  "author": {
+    "name": "Nguyen Tan Phat",
+    "email": "phatnguyenbk@gmail.com"
+  },
+  "license": "ISC",
+  "private": true,
+  "dependencies": {
+    "express": "4.17.2",
+    "cors": "2.8.5",
+    "helmet": "5.0.1",
+    "mysql2": "2.3.3",
+    "sequelize": "6.12.5",
+    "celebrate": "15.0.0",
+    "http-status": "1.5.0",
+    "express-jwt": "6.1.0",
+    "jsonwebtoken": "8.5.1",
+    "argon2": "0.28.3",
+    "crypto": "1.0.1",
+    "dotenv": "10.0.0",
+    "moment": "2.29.1",
+    "winston": "3.3.3",
+    "apidoc": "0.50.3"
+  },
+  "devDependencies": {
+    "sequelize-cli": "6.3.0",
+    "nodemon": "2.0.15",
+    "@babel/register": "7.16.7",
+    "@babel/core": "7.16.7",
+    "@babel/node": "7.16.7",
+    "@babel/preset-env": "7.16.7",
+    "@babel/plugin-transform-runtime": "7.16.7",
+    "@babel/plugin-proposal-optional-chaining": "7.16.7"
+  },
+  "engines": {
+    "node": ">=14"
+  }
+}
