@@ -10,7 +10,6 @@ module.exports = {
       bigNumberStrings: true
     },
     logQueryParameters: (process.env.SEQUELIZE_LOGGING === 'true') ? true : false,
-    migrationStorage: 'sequelize',
   },
   test: {
     username: process.env.CI_DB_USERNAME || 'root',
@@ -23,7 +22,6 @@ module.exports = {
       bigNumberStrings: true
     },
     logQueryParameters: (process.env.SEQUELIZE_LOGGING === 'true') ? true : false,
-    migrationStorage: 'sequelize',
   },
   production: {
     username: process.env.PROD_DB_USERNAME || 'root',
@@ -36,6 +34,5 @@ module.exports = {
       bigNumberStrings: true
     },
     logQueryParameters: (process.env.SEQUELIZE_LOGGING === 'true') ? true : false,
-    migrationStorage: 'sequelize',
   }
 };

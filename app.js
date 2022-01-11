@@ -24,9 +24,6 @@ app.use(express.urlencoded({
   limit: process.env.ENCODED_BODY_LIMIT || '50mb'
 }));
 
-// apidoc
-// app.use('/apidoc', express.static('./apidoc/output'));
-
 // mount all routes on /api path
 app.use(`${api.prefix}`, apiRoutes);
 
@@ -42,6 +39,7 @@ app.use((req, res, next) => {
 });
 
 // error handler, send stacktrace only during development
+/* eslint-disable no-unused-vars */
 app.use((err, req, res, next) => {
   handleError(err, res);
 });

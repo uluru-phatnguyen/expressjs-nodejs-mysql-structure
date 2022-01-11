@@ -11,24 +11,23 @@ class KairosError extends Error {
 
     if (typeof message === 'object') {
       switch (message?.name) {
-        case 'SequelizeValidationError': {
-          this.code = `${message?.errors[0]?.validatorKey?.toUpperCase()}`;
-          this.message = message?.errors[0]?.message;
-          return;
-        }
-        case 'SequelizeUniqueConstraintError': {
-          this.code = `${message?.errors[0]?.validatorKey?.toUpperCase()}`;
-          this.message = message?.errors[0]?.message;
-          return;
-        }
-        case 'SequelizeDatabaseError': {
-          this.message = message?.message;
-          return;
-        }
-        default: {
-          this.message = message?.message;
-          return;
-        }
+      case 'SequelizeValidationError':
+        this.code = `${message?.errors[0]?.validatorKey?.toUpperCase()}`;
+        this.message = message?.errors[0]?.message;
+        return;
+
+      case 'SequelizeUniqueConstraintError':
+        this.code = `${message?.errors[0]?.validatorKey?.toUpperCase()}`;
+        this.message = message?.errors[0]?.message;
+        return;
+
+      case 'SequelizeDatabaseError':
+        this.message = message?.message;
+        return;
+
+      default:
+        this.message = message?.message;
+        return;
       }
     }
 
@@ -47,6 +46,8 @@ const handleError = (err, res) => {
 
   if (name && name?.includes('Sequelize')) {
     err = new KairosError(statusCode, err);
+  } else if (name === 'UnauthorizedError') { // https://github.com/auth0/express-jwt#error-handling
+    err.message = 'Invalid token.';
   }
 
   logger.error('[HandleError]', { message: err.message || err, stack: err.stack });

@@ -1,8 +1,8 @@
 
 const { sequelize } = require('./../db');
 
-async function assertDatabaseConnection () {
-  console.log(`Checking database connection...`);
+async function assertDatabaseConnection() {
+  console.log('Checking database connection...');
 
   try {
     await sequelize.authenticate();

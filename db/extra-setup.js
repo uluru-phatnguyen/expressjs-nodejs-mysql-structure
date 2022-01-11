@@ -25,6 +25,7 @@ function applyExtraSetup(sequelize) {
     targetKey: 'name', // which references the `name` field from the target model (Role).
     foreignKey: 'roleName', // This creates a foreign key called `role` in the source model (User)
     as: 'role',
+    constraints: false,
   });
 
   // https://sequelize.org/v6/manual/assocs.html#for--code-belongstomany--code--relationships

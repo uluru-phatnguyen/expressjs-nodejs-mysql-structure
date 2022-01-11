@@ -5,10 +5,10 @@ const options = {
   force: !!forceMigrate
 };
 
-sequelize.sync(options).then(function () {
+sequelize.sync(options).then(() => {
   console.log('Sync success!');
   process.exit(0);
-}, function (err) {
+}, (err) => {
   console.error('Sync error', err);
   process.exit(0);
 });

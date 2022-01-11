@@ -1,5 +1,5 @@
 const jwt = require('express-jwt');
-const { jwtSecret, jwtAlgorithm } = require('./../../config');
+const { jwtPublic, jwtAlgorithm } = require('./../../config');
 
 /**
  * getTokenFromHeaders
@@ -21,9 +21,9 @@ const getTokenFromHeaders = (req) => {
 };
 
 const isAuth = jwt({
-  secret: jwtSecret, // The _secret_ to sign the JWTs
+  secret: jwtPublic, // The _secret_ to sign the JWTs
   algorithms: [jwtAlgorithm], // JWT Algorithm
-  userProperty: 'token', // Use req.token to store the JWT
+  userProperty: 'user', // Use req.user to store the JWT
   getToken: getTokenFromHeaders, // How to extract the JWT from the request
 });
 

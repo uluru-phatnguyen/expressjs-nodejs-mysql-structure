@@ -22,15 +22,15 @@ module.exports = (sequelize) => {
     roleName: {
       type: DataTypes.STRING,
       allowNull: false,
-      defaultValue: 'user'
+      defaultValue: 'user',
     },
     password: {
       type: DataTypes.STRING, /** hash password */
-      allowNull: false
+      // allowNull: false,
     },
     salt: {
       type: DataTypes.STRING, /** hash password */
-      allowNull: false
+      // allowNull: false,
     }
   }, {
     timestamps: true,
@@ -51,11 +51,13 @@ module.exports = (sequelize) => {
     ],
     // https://sequelize.org/v6/manual/hooks.html
     hooks: {
-      afterCreate : (record, options) => {
+      /* eslint-disable no-unused-vars */
+      afterCreate: (record, options) => {
         delete record?.password;
         delete record?.salt;
       },
-      afterUpdate : (record, options) => {
+      /* eslint-disable no-unused-vars */
+      afterUpdate: (record, options) => {
         delete record?.password;
         delete record?.salt;
       }

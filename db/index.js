@@ -23,10 +23,10 @@ const modelDefiners = [
 ];
 
 fs.readdirSync(path.join(__dirname, '/models'))
-  .filter(file => {
+  .filter((file) => {
     return (file.indexOf('.') !== 0) && (file !== basename) && (file.slice(-3) === '.js');
   })
-  .forEach(file => {
+  .forEach((file) => {
     const model = require(path.join(__dirname, '/models/', file));
     modelDefiners.push(model);
   });
