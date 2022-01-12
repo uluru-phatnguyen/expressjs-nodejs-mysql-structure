@@ -15,7 +15,7 @@ route.post(
     body: Joi.object({
       firstName: Joi.string().required(),
       lastName: Joi.string().required(),
-      email: Joi.string().required(),
+      email: Joi.string().email(),
       password: Joi.string().required(),
     }),
   }, {
@@ -42,7 +42,7 @@ route.post(
   '/signin',
   celebrate({
     body: Joi.object({
-      email: Joi.string().required(),
+      email: Joi.string().email(),
       password: Joi.string().required(),
     }),
   }),

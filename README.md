@@ -46,6 +46,10 @@ Run `npm run seed`
 
 API URL: `http://localhost:{port}/api`
 
+## API Docs public URL
+
+API URL: `http://localhost:{port}/apidoc`
+
 ## Testing
 
 Currently, I just apply `chai`, `mocha` and `supertest`
@@ -57,5 +61,5 @@ Currently, I just apply `chai`, `mocha` and `supertest`
 - Write full-test
 - Write full-api update Role, Permission
 - Extend Role and Permission with n:n relationship
+- Update API docs
 - Test try to use Jest instead of mocha
-- API docs

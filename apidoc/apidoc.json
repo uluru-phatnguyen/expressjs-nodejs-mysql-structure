@@ -1,0 +1,13 @@
+{
+  "name": "Kairos API Docs",
+  "version": "0.1.0",
+  "description": "API Docs",
+  "title": "API Docs | Kairos",
+  "sampleUrl": "http://localhost:6868",
+  "template": {
+    "withCompare": false
+  },
+  "order": [
+    "Auth"
+  ]
+}

@@ -16,7 +16,8 @@
     "test:db:seed": "cross-env NODE_ENV=test sequelize db:seed:all --seeders-path ./db/seeders/test",
     "test:db:seed:undo:all": "cross-env NODE_ENV=test sequelize db:seed:undo:all --seeders-path ./db/seeders/test",
     "test:db:sync": "cross-env NODE_ENV=test npm run sync --force",
-    "test:db:drop:tables": "cross-env NODE_ENV=test node ./db/drop-all-tables"
+    "test:db:drop:tables": "cross-env NODE_ENV=test node ./db/drop-all-tables",
+    "apidoc": "apidoc -i ./apidoc -o ./apidoc/output"
   },
   "keywords": [
     "expressjs",
